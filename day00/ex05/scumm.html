@@ -1,0 +1,96 @@
+<!doctype HTML>
+<html>
+    <head>
+    <link rel='stylesheet' href='doft.css' type = 'text/css'>
+    <script src="doft.js"></script>
+    <script type="text/javascript"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script src = "https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/interact.js/1.2.6/interact.min.js"></script>
+
+     
+
+    <title>Day of the 42</title>
+    </head>
+
+    <body>
+        <div class='top-box'>
+            <span>
+            <img src="./resources/day_of_the_42.png" class='day' id = 'day'>
+            
+                
+            </span>
+            <span class ='reload'>
+                <a href="https://www.disney.com/" >
+                <img src="resources/reload.png" width = 20px title = "Start from the beginning">
+                </a>
+            </span>
+            <span class = 'close' width = 15px>
+                 <a href="http://www.relaischateaux.com.">
+                 <img src="resources/close.gif" title="Disconnect">
+                </a>
+            </span>
+             <span >
+                <img src='./resources/loupe.png' class = 'loupe' onclick="magGlass()">
+        </span>
+        </div>
+        <div id='container'>
+        <div class='left'>
+            <div class='arrow'>
+                <img src= "./resources/arrow.png" class='arrow' title="Advance" onclick="changeImage()">
+                <img src= "./resources/main.png" class= 'hand' title="Take">
+                <img src= "./resources/oeil.png" class='oeil' title="Look">
+                <img src= "./resources/outil.png" class='outil' title="Use" >
+                <img src= "./resources/chat-icon.png" class='chat' title="Speak">
+            </div>
+        </div>
+        <div class='mid'> 
+                <img src="http://cyberland.c.y.pic.centerblog.net/o/ec88d484.jpg" usemap="#image-map" class='cluster' id = 'clusterr' onclick="openImage()">
+
+                <map name="image-map">
+                    <area target="_blank" alt="" title="apple" href="http://www.apple.com" coords="785,423,649,300" shape="rect">
+                    <area target="_blank" alt="" title="ikea" href="http://ikea.com" coords="477,560,326,325" shape="rect">
+                </map>
+            </div>
+        <div class='right'>
+            <img src="./resources/book.png" class= 'book'>
+            <img src="./resources/towel.png" class= 'towel'>
+            <div class = 'b'>
+            <div class ="br">
+            <img src="./resources/brick.jpg" class= 'brick'>
+            <img src="./resources/brick.jpg" class= 'brick'>
+            <img src="./resources/brick.jpg" class= 'brick'>
+            </div>
+            <div class = 'br'>
+            <img src="./resources/brick.jpg" class= 'brick'>
+            <img src="./resources/brick.jpg" class= 'brick'>
+            <img src="./resources/brick.jpg" class= 'brick'>
+            </div>
+            </div>
+        </div>
+        <button type="button" onclick="revealMessage()">Click me!</button>
+        <p id="hiddenMessage" style="display:none">Welcome to 42</p>
+        </div>
+        
+
+        <div id= 'green' class="draggable">
+            Vous <a style="font-size: 30px">entrez</a> alors dans une grande pece remplie</br>
+            d'<a style="text-shadow: 4px 4px 4px #ff0000;">ordinateurs</a>...</br>
+            <a style= "font-style: italic">- Bonjour,vous etes bouveau ici ? </br></a>
+            <input type="text" class="resizedTextbox">
+            <button type="button" style ="margin-left:10px" >Repondre</button>
+        </div>
+        
+        <div id="drag-1" class="draggable">
+                <p> You can drag one element </p>
+              </div>
+              <div id="drag-2" class="draggable">
+                <p> with each pointer </p>
+              </div>
+	
+    </body>
+</html>
