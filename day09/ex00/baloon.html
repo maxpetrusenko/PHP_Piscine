@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <style>
+        #baloon {
+            background-color: red;
+            height: 200px;
+            width: 200px;
+            border-radius: 4200px;
+        }
+    </style>
+    <script>
+                    var color = { 0:"green", 1:"blue", 2:"red"};
+                    var colorIndex = 0;
+        function increase() {
+            var el = document.getElementById("baloon")
+            var height = el.offsetHeight;
+            var width = el.offsetWidth;
+            var newHeight = height + 10;
+            var newWidth = width + 10;
+            el.style.height = newHeight + 'px';
+            el.style.width = newWidth + 'px';
+            el.style.backgroundColor = color[colorIndex++]
+            if (colorIndex >2 )
+                colorIndex = 0;
+
+            if (el.style.width == 420 + 'px') {
+                el.style.height = '';
+                el.style.width = '';
+            }
+            
+        }
+        function decrease() {
+            var el = document.getElementById("baloon")
+            var height = el.offsetHeight;
+            var width = el.offsetWidth;
+            
+            if (el.style.width > 200 + 'px') {
+                var newHeight = height -5;
+                var newWidth = width -5;
+            }
+            el.style.height = newHeight + 'px';
+            el.style.width = newWidth + 'px';
+            el.style.backgroundColor = color[colorIndex--]
+            if (colorIndex < 0 )
+                colorIndex = 2;
+
+        }
+    </script>
+</head>
+<body>
+    <div id ="baloon" onclick="increase()" onmouseout="decrease()">
+
+    </div>
+</body>
+</html>

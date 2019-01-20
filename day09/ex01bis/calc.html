@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Calculator</title>
+		<style>
+		</style>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+			</head>
+	<body>
+		<div class="" id=""></div>
+
+		<input id="one" type="text">
+		<select id="op">
+			<option value="+"> + </option>
+			<option value="-"> - </option>
+			<option value="*"> * </option>
+			<option value="/"> / </option>
+			<option value="%"> % </option>
+		<select>
+		<input id="two" type="text">
+		<input id="new" type="submit" value="Try me!">
+
+        <script type="text/javascript">
+
+			$(document).ready(function() {
+				//setInterval(function() { alert("Please use me..."); }, 30000 );
+					
+					$('#new').click(function()
+					{
+                        var first = parseInt($('#one').val());
+                        var second = parseInt($('#two').val());
+                        var op = $('#op').val();
+                        var res = 0;
+                        if (second != NaN && first != NaN && first >= 0 && second >= 0){
+                                if (op == '+')
+                                res = first + second;
+                            else if (op == '-')
+                                res = first - second;
+                            else if (op == '*')
+                                res = first * second;
+                            else if (op == '/'){
+                                if (second == 0){
+                                    console.log("It’s over 9000!");
+                                    alert('It’s over 9000!');
+                                }
+                                else
+                                    res = first / second;
+                            }
+                            else if (op == '%'){
+                                if (second == 0){
+                                    console.log("It’s over 9000!");
+                                    alert('It’s over 9000!');
+                                }
+                            else
+                                res = first % second;
+                            }
+                            if (res > 0){
+                                alert(res);
+                                console.log(res);
+                            }
+                            else if (res < 0 )
+                                alert('Error :(');
+                                }
+
+                    });
+                });
+		</script>
+	<body>
+</html>

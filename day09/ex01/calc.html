@@ -1,0 +1,58 @@
+<!Doctype HTML>
+<html>
+    <head>
+        <style>
+        </style>
+        <script>
+            setTimeout( function ( ) { alert( "Please, use me..." ); }, 30000 )
+            function calc() {
+                var first = parseInt(document.getElementById('first').value);
+                var second = parseInt(document.getElementById('second').value);
+                var op = document.getElementById('op').value;
+                var res= 0;
+                if (second != NaN && first != NaN && first >= 0 && second >= 0){
+                    if (op == '+')
+                        res = first + second;
+                    else if (op == '-')
+                        res = first - second;
+                    else if (op == '*')
+                        res = first * second;
+                    else if (op == '/'){
+                        if (second == 0){
+                        console.log("It’s over 9000!");
+                        alert('It’s over 9000!');
+                        }
+                        else
+                        res = first / second;
+                    }
+                    else if (op == '%'){
+                        if (second == 0){
+                        console.log("It’s over 9000!");
+                        alert('It’s over 9000!');
+                        }
+                        else
+                            res = first % second;
+                    }
+                    if (res > 0){
+                        alert(res);
+                        console.log(res);
+                    }
+                    }
+                    else
+                        alert('Error :(');
+        }
+        </script>
+    </head>
+    <body>
+            <input id = 'first'>
+            <select id = 'op'>
+                    <option>+</option>
+                    <option>-</option>
+                    <option>*</option>
+                    <option>/</option>
+                    <option>%</option>
+            </select>
+            <input id = 'second'>
+            <button id= "submit" value = "Submit" onclick="calc()">Try me!</button>
+    </body>
+</html>
