@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>   
+    </head>
+    <body>
+        <script type="text/javascript">
+
+            if (window.File && window.FileReader && window.FileList && window.Blob) {
+                console.log("File APIs are supported !");
+            } else {
+                console.log('The File APIs are not fully supported in this browser.');
+            }
+            $.get('../img/42.png', function(data){
+                console.log(data);
+            })
+
+        </script>
+    </body>
+
+</html>

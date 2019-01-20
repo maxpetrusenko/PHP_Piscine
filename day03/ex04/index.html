@@ -1,13 +1,30 @@
 <html>
 <head>
-<script>
-function readfile() {
-    alert(document.getElementById('iframe').contentDocument.body.firstChild.innerHTML);
-}
+<script>    
+    window.onload = (function(){
+  var xhr = new XMLHttpRequest();
+  xhr.responseType = "text";
+  xhr.onreadystatechange = function(e){
+    var 
+      xhr = e.target
+      , d = document.createElement("div")
+      ;
+
+    if(xhr.DONE !== xhr.readyState) return;
+
+    d.style.cssText = "max-width:500px; max-height:200px; background-color:rgba(223,223,223,.7); border:3px solid rgba(0,0,0,.5); padding:5px; margin:10px; overflow-x:hidden; overflow-y:auto; word-break:break-word; font-family:'Courier New',Consolas,Lucida Console,monospace,sans-serif; text-shadow:.3px .3px rgba(0,0,0,.2),-0.3px -0.3px rgba(0,0,0,.2); border-radius:5px; box-shadow:1px 1px 5px rgba(0,0,0,.3),-1px -1px 5px rgba(0,0,0,.3)";
+
+    d.appendChild(document.createTextNode(xhr.responseText));
+    document.querySelector('body').appendChild(d);
+  }
+  xhr.open("GET", String(window.location.href), true);
+  xhr.send();
+}());
 </script>
 </head>
 <body>
-<iframe id='iframe' src = './test.txt' onload='readfile()'> </iframe>
 <h1>Hello World!</h1>
+<a target="_blank" href="view-source:wikipedia.org/">view Wikipedia's home page HTML source</a>
+<a href="javascript:void(window.open('view-source:'+wikipedia.org))">view-source</a>
 </body>
 </html>
